@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>        
+		
+		<report 
+			id="report_product_concentrate" 
+			model="stock.picking.out" 
+			name="product.concentrate"
+			string="Product Concentrate"
+			multi="False"
+			file="smso_conprod/report/product_concentrate.mako"			
+			report_type="webkit"
+		/>
+		
+		<record id="report_product_concentrate" model="ir.actions.report.xml">
+            <field name="webkit_header" ref="product_concentrate_header1"/>
+        </record>
+		
+	</data>
+</openerp>
+		

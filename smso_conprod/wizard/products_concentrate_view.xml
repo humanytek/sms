@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+    	<record id="view_products_concentrate_wizard_form" model="ir.ui.view">
+            <field name="name">products.concentrate.wizard.form</field>
+            <field name="model">products.concentrate.wizard</field>
+            <field name="arch" type="xml">
+                <form string="Product Concentrate" version="7.0">
+                		<group >
+                		<group >
+                	    	<field name="initial_date" required="1"/>
+                	    	
+                		</group>
+                		<group >
+                		<field name="end_date" required="1"/>
+                		</group>
+                		</group>
+                		<footer>
+							<button name="print_button" type="object" string="Print" class="oe_highlight"/>
+	                   		or 
+							<button string="Cancel" class="oe_link" special="cancel"/>
+						</footer>
+                </form>
+            </field>
+    	</record>
+        
+    	<record id="view_products_concentrate_wizard_action" model="ir.actions.act_window">
+            <field name="name">Products Concentrate</field>
+            <field name="res_model">products.concentrate.wizard</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_products_concentrate_wizard_form"/>
+            <field name="target">new</field>
+    	</record>
+    	
+    	<menuitem id="menu_stock_reporting" name="Reports" parent="stock.menu_stock_root" sequence="16" />
+    	<menuitem action="view_products_concentrate_wizard_action" id="menu_view_products_concentrate_wizard_action"  parent="menu_stock_reporting" sequence="1"/>
+    </data>
+</openerp>
